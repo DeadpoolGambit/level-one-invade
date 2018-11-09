@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TeamMembers } from '../teammember';
+import {PlayersComponent} from './players/players.component';
 
 @Component({
   selector: 'app-team-list',
   templateUrl: './team-list.component.html',
-  styleUrls: ['./team-list.component.css']
+  styleUrls: ['./team-list.component.css'],
+  entryComponents: [PlayersComponent]
 })
 
 export class TeamListComponent implements OnInit {
+
+  teammembers = TeamMembers;
+  summonerName = 'DeadpoolGambit';
 
   constructor(private http: HttpClient) { }
 
@@ -25,11 +31,11 @@ export class TeamListComponent implements OnInit {
   ngOnInit() {
   }
 
-  findSummoner(name : string): any {
+  findSummoner(name: string): any {
     console.log(this.httpOptions);
-    let response = this.http.request("GET", this.url, this.httpOptions).subscribe(
+    const response = this.http.request('GET', this.url, this.httpOptions).subscribe(
       data => {
-        console.log("Get Request is successful ", data);
+        console.log('Get Request is successful ', data);
     });
     alert(name);
   }

@@ -1,9 +1,4 @@
 <div class="navbar-nav">
   <a href="#" class="fa fa-navicon"></a>
-  <a href="#" class="nav-link" (click)="findSummoner('megan foxyyy')">Megan Foxyyy</a>
-  <a href="#" class="nav-link" (click)="findSummoner('Jig in Jag')">Jig In Jag</a>
-  <a href="#" class="nav-link" (click)="findSummoner('Megaman Z3R0')">Megaman Z3R0</a>
-  <a href="#" class="nav-link" (click)="findSummoner('DeadpoolGambit')">DeadpoolGambit</a>
-  <a href="#" class="nav-link" (click)="findSummoner('BigLawts')">BigLawts</a>
-  <a href="#" class="nav-link" (click)="findSummoner('I Am Bennyy')">I Am Bennyy</a>
+  <a routerLink="/players" class="nav-link" *ngFor="let teammember of teammembers" (click)="findSummoner(teammember.summonerName)">{{teammember.summonerName}}</a>
 </div>
