@@ -1,6 +1,4 @@
-import { TeamMembers } from './teammember';
-
-export const TeamMembers: TeamMembers[] = [
+export const TeamMembers = [
   { id: 1, summonerName: 'Megan Foxyyy', role: 'Top Lane'},
   { id: 2, summonerName: 'Jig In Jag', role: 'Jungle'},
   { id: 3, summonerName: 'Megaman Z3RO', role: 'Mid Lane'},
